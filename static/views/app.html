@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Estou dentro da App
+   <main></main>
+   <button id="salir">Salir</button>
+   <script>
+      //localStorage.setItem ("usuario", "Tom");
+
+      (
+        async function(){
+            console.log ("buenas a todos")
+            const response = await fetch("/enviousuario");
+            const usuario = await response.json();
+            console.log(usuario);
+            
+            if(usuario !== "usuario no autorizado" ){
+
+            console.log("usuario.nome",usuario.nome);
+            console.log("usuario.usuario.nome",usuario.usuario.nome);
+            localStorage.setItem ("usuario",usuario.usuario.nome);
+            document.querySelector("main").innerHTML =  `<h1>Bienvenido ${usuario.usuario.nome}</h1>`;
+            }
+
+
+            }  
+        )();
+
+
+        salir.addEventListener("click",()=>{
+            console.log ("salir")
+            localStorage.removeItem("usuario");
+
+            //window.location.href = "/";
+            location.replace("/");
+        })
+   </script>
+</body>
+</html>
