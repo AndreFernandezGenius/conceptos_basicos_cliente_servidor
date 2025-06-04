@@ -23,12 +23,12 @@ const tarefasText = await peticionTarefas.json();
 console.log("tareas: ", tarefasText);
 
 
-const refMain = document.querySelector("main");
+
 
 
    const tarefas = await fetch(endpoints.tareas,obxetoEnvio)
                 const tarefasJson = await tarefas.json()
-                const refMain = document.querySelector("main");
+  
 
  for (let propiedade in tarefasJson) {
         console.log(tarefasJson[propiedade], propiedade);
