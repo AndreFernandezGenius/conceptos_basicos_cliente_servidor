@@ -1,4 +1,5 @@
 export const endpoints = {
-    paginaApp: "/paxina-app",
-    tareas: "/tarefas"
+    acceso:"/acceso",
+    paxinaApp:"/paxina-app",
+    tareas:"/tareas"
 }

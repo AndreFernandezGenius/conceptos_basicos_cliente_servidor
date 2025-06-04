@@ -1,9 +1,9 @@
+import { endpoints } from "../datos/datos.js";
+
 export async function AcesoUsuario() {
     botonEnviar.addEventListener("click",async (e)=>{
             e.preventDefault();
-            //const {nome, email} = formulario;// desesctructura o obxeto de entrada
-            //console.log(nome.value, email.value);// imprime os valores do formulario
-
+       
             let datosFormulario = new FormData(formulario);
             let entradas = Object.fromEntries(datosFormulario.entries());
             
@@ -16,7 +16,7 @@ export async function AcesoUsuario() {
                 },
                 body: JSON.stringify(entradas)
             }
-            let respostaServer = await fetch("/acceso", obxetoEnvio) 
+            let respostaServer = await fetch(endpoints.acceso, obxetoEnvio) 
 
             let resposta = await respostaServer.json();
 

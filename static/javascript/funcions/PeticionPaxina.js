@@ -26,9 +26,18 @@ console.log("tareas: ", tarefasText);
 const refMain = document.querySelector("main");
 
 
-for (let tarefa in tarefasText) {
-    refMain.innerHTML += `<li>${tarefasText[tarefa]}</li>`;
-}
+   const tarefas = await fetch(endpoints.tareas,obxetoEnvio)
+                const tarefasJson = await tarefas.json()
+                const refMain = document.querySelector("main");
+
+ for (let propiedade in tarefasJson) {
+        console.log(tarefasJson[propiedade], propiedade);
+        let elementoP = document.createElement("p");
+        elementoP.innerHTML = tarefasJson[propiedade];
+        console.log("elementoP", elementoP);
+        elementoDiv.append(elementoP);
+        console.log(elementoDiv);
+      }
 
 
 const salir = document.querySelector("#salir");
